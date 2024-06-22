@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --black : #111111;
+    --white : #fff;
+    --orange : tomato;
+    --green : #3DBC1D;
+    --grey : grey;
+    --darkgrey : #1B1A1A;
+    --red : #C73640;
+    --lightgrey : #b3b3b3;
+    
+}
+
+
+
+body{
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Rubik", sans-serif;
+}
+
+::selection {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+   
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--black); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--green); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2d8b15; 
+  }

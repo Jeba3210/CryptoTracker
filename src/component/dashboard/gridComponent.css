@@ -1,0 +1,118 @@
+.coinDetail_div{
+    height: 300px;
+    width: 300px;
+    border: 2px solid var(--darkgrey);
+    border-radius: .75rem;
+    background-color: var( --darkgrey);
+ margin: .5rem;
+    
+}
+.coinDetail_div:hover{
+   border-color: var(--green);
+       transition: all 0.3s;
+    }
+    .coinDetail_red:hover{
+        border-color: var(--red) !important;
+            transition: all 0.3s;
+         }
+
+
+.info-flex{
+    display: flex;
+    justify-content: flex-start;
+    padding: .75rem;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.coin-img{
+    height: 3rem;
+}
+.symbol{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.name{
+    text-transform: capitalize;
+    font-weight: lighter;
+    color: var(--grey);
+}
+.price-flex{
+    display: flex;
+    gap: 1rem;
+    margin: 2rem;
+}
+.marketcap_change{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   width: 5rem;
+    height: 2rem;
+    border: 2px solid var(--green);
+    border-radius: 20px;
+    color: var(--green);
+    min-width: 70px;
+}
+.red{
+    border: 2px solid var(--red);
+    color: var(--red);
+
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--green) ;
+    border-radius:50%;
+    color: var(--green) ;
+}
+.red_icon{
+    border: 2px solid var(--red) !important;
+    color: var(--red);
+
+}
+
+.icon:hover{
+    background-color: var(--green);
+color: var(--white);
+transition: all 0.3s;
+
+}
+.marketcap_change:hover{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.red:hover{
+    background-color: var(--red);
+    color: white;
+    transition: all 0.3s;
+}
+.red_icon:hover{
+    background-color: var(--red) !important;
+    color: white;
+    transition: all 0.3s;
+}
+
+.curr_price{
+    padding-bottom: 10px;
+    color: var(--green) ;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.red_curr{
+    color: var(--red) !important;
+}
+
+.market-flex{
+    display: flex;
+    flex-direction: column;
+    margin: 1.9rem;
+    gap: .3rem;
+    color: var(--lightgrey);
+}
+
