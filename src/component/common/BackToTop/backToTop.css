@@ -1,0 +1,13 @@
+.back-to-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+}

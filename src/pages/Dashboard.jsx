@@ -5,6 +5,7 @@ import axios from 'axios'
 import SearchComponent from '../component/dashboard/Search/SearchComponent';
 import PaginationComponent from '../component/dashboard/Pagination/PaginationComponent';
 import Loader from '../component/common/Loader/Loader';
+import BackToTop from '../component/common/BackToTop/BackToTop';
 
 function Dashboard() {
 
@@ -49,9 +50,11 @@ function Dashboard() {
     
   return (
     <>
+     <Header />
+     <BackToTop />
     {isLoading ? <Loader/> : 
     <>
-      <Header />
+     
      <SearchComponent search={search} onSearchChange={onSearchChange}/>
      <TabsComponent coins={search ? filteredCoin : paginatedCoins}/>
      {!search && <PaginationComponent page={page} handlePageChange={handlePageChange}/>}
