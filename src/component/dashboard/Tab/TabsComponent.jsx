@@ -5,9 +5,9 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
-import GridComponent from './GridComponent';
+import GridComponent from '../Grid/GridComponent';
 import './tabsComponent.css'
-import ListComponent from './ListComponent';
+import ListComponent from '../List/ListComponent';
 
 
 export default function TabsComponent({ coins }) {

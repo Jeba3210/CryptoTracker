@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { alpha, styled } from '@mui/material/styles';
-import { green, pink } from '@mui/material/colors';
+import { green} from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
 
 const GreenSwitch = styled(Switch)(({ theme }) => ({

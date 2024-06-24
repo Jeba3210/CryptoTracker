@@ -3,6 +3,7 @@ import CustomisedSwitch from './CustomisedSwitch'
 import AnchorTemporaryDrawer from './Drawer'
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
+import CustomisedButton from '../../Button/CustomisedButton'
 
 function Header() {
   return (
@@ -16,7 +17,8 @@ function Header() {
         <CustomisedSwitch />
           <a href="/" className='link'><p>Home</p></a>        
           <a href="/" className='link'><p>Compare</p></a>
-          <Link to={`/dashboard`} className='link dashboard'><button className='btn'><p>Dashboard</p></button></Link>
+          {/* <Link to={`/dashboard`} className='link dashboard'><button className='btn'><p>Dashboard</p></button></Link> */}
+          <Link to={`dashboard`}><CustomisedButton text={"Dashboard"} /></Link>
       </div>
       <div className='drawer'>
         <AnchorTemporaryDrawer />
