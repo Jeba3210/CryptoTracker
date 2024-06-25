@@ -40,6 +40,15 @@
 .text-center{
     text-align: center !important;
 }
+.list-market-cap, .list-total-vol{
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1375px){
+    .list-market-cap, .list-total-vol{
+        font-size: 1rem;
+    }
+}
 
 @media only screen and (max-width: 1075px) {
     .td-icon{
@@ -60,6 +69,8 @@
        .List-table{
         width: 95%;
        }
+       
+    
    
   }
 
@@ -96,15 +107,20 @@
         width: 12%;
     }
   }
-  @media only screen and (max-width: 580px) {
+  @media only screen and (max-width: 600px) {
     .table-row{
         gap: 0;
+        margin-left: 0;
     }
     .td-img{
-        margin-right: .2rem;
+        margin-right: .1rem;
     }
     .table-row td{
         width: 8%;
     }
+    
+
   }
+
+  
 

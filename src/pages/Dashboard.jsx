@@ -54,8 +54,7 @@ function Dashboard() {
      <BackToTop />
     {isLoading ? <Loader/> : 
     <>
-     
-     <SearchComponent search={search} onSearchChange={onSearchChange}/>
+    <SearchComponent search={search} onSearchChange={onSearchChange}/>
      <TabsComponent coins={search ? filteredCoin : paginatedCoins}/>
      {!search && <PaginationComponent page={page} handlePageChange={handlePageChange}/>}
     </>

@@ -42,8 +42,8 @@ function ListComponent({coin}) {
                 </Tooltip>
 
 
-                   <Tooltip title="Total Volume" placement='bottom-start'>  <td className='total_vol td-total-vol text-right'> ${coin.total_volume.toLocaleString() }</td></Tooltip>
-                   <Tooltip title="Market Cap" placement='bottom'><td className='market_cap  td-market-cap text-right'> ${coin.market_cap.toLocaleString() }</td></Tooltip>
+                   <Tooltip title="Total Volume" placement='bottom-start'>  <td className='total_vol list-total-vol td-total-vol text-right'> ${coin.total_volume.toLocaleString() }</td></Tooltip>
+                   <Tooltip title="Market Cap" placement='bottom'><td className='market_cap list-market-cap  td-market-cap text-right'> ${coin.market_cap.toLocaleString() }</td></Tooltip>
             
    </tr>
   )

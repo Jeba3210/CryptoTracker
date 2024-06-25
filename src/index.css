@@ -49,3 +49,12 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: #2d8b15; 
   }
+
+  .list-wrapper{
+    display: block;
+    width: 90%;
+    background-color: var(--darkgrey);
+    margin: 2rem;
+    padding: .1rem 1.5rem;
+    border-radius: 20px;
+  }
