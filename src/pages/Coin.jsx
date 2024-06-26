@@ -5,6 +5,7 @@ import Header from '../component/common/Header/Header';
 import Loader from '../component/common/Loader/Loader';
 import { CoinObject } from '../functions/CoinObject';
 import ListComponent from '../component/dashboard/List/ListComponent';
+import CoinInfo from '../component/Coin/CoinInfo';
 
 function Coin() {
 const {id} = useParams();
@@ -34,9 +35,13 @@ useEffect(() =>{
    <Header />
 {isLoading ? 
 <Loader /> :
+<> 
 <div className='list-wrapper'>
 <ListComponent coin={coinData}/>
 </div>
+<CoinInfo desc={coinData.desc}/>
+
+</>
 
 }
    </>

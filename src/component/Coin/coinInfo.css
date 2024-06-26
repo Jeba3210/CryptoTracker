@@ -1,0 +1,13 @@
+.info-wrapper{
+    display: block;
+    width: 90%;
+    background-color: var(--darkgrey);
+    margin: 2rem;
+    padding: 2rem 1.5rem !important;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.info-wrapper a{
+    color: var(-green);
+}
