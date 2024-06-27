@@ -115,13 +115,13 @@
     .heading1 , .heading2{
         font-size: 5rem;
     }
-    .phone{
-        left: 3%;
+    /* .phone{
+        left: 1px;
       
      }
      .gradient{
-         left: 25%;
-     }
+         left: 20%;
+     } */
   }
 
   @media only screen and (max-width: 616px) {

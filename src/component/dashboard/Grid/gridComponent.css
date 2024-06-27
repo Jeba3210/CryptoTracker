@@ -116,3 +116,22 @@ transition: all 0.3s;
     color: var(--lightgrey);
 }
 
+a:link {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
+

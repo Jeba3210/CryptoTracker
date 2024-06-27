@@ -18,7 +18,7 @@ function App() {
           <Route path='/' Component={Home} />
           {/* <Route path='/compare' Component={Compare}/> */}
           <Route path='/dashboard' Component={Dashboard} />
-          <Route path='/dashboard/:id' Component={Coin}/>
+          <Route path='/coin/:id' Component={Coin}/>
         </Routes>
       </BrowserRouter>
     </>

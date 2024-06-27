@@ -3,10 +3,13 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import './listComponent.css'
 import { Tooltip } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function ListComponent({coin}) {
   return (
-   <tr className='table-row'>
+    <>
+    <Link to={`/coin/${coin.id}`}>
+    <tr className='table-row'>
     <Tooltip title="Logo" placement='bottom-start'>
     <td className='td-img'>
                 <img className='coin-img img' src={coin.image} alt="" />
@@ -46,6 +49,10 @@ function ListComponent({coin}) {
                    <Tooltip title="Market Cap" placement='bottom'><td className='market_cap list-market-cap  td-market-cap text-right'> ${coin.market_cap.toLocaleString() }</td></Tooltip>
             
    </tr>
+    </Link>
+       
+    </>
+   
   )
 }
 

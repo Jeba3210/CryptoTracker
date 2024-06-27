@@ -9,5 +9,9 @@
 }
 
 .info-wrapper a{
-    color: var(-green);
+    color: var(--green);
+    text-decoration: underline;
+}
+.info-name{
+    margin-bottom: 1rem;
 }

@@ -4,6 +4,10 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1000;
     /* color: var(--green);
     background-color: var(--black); */
 }
