@@ -20,7 +20,10 @@ function Compare() {
 	const [firstCryptoData, setFirstCryptoData] = useState({});
 	const [secondCryptoData, setSecondCryptoData] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
-	const [chartData, setChartData] = useState({});
+	const [chartData, setChartData] = useState({
+		labels: [],
+		datasets: [],
+	});
 	const [priceType, setPriceType] = useState('prices');
 
 	useEffect(() => {
@@ -160,7 +163,6 @@ function Compare() {
 								/>
 								<LineChart
 									chartData={chartData}
-									priceType={priceType}
 									multiAxis={true}
 								/>
 							</div>

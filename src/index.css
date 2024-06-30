@@ -1,79 +1,90 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-:root{
-    --black : #111111;
-    --white : #fff;
-    --orange : tomato;
-    --green : #3DBC1D;
-    --grey : grey;
-    --darkgrey : #1B1A1A;
-    --red : #C73640;
-    --lightgrey : #b3b3b3;
-    --blue: #3A80E9;
-    
+:root {
+	--black: #111111;
+	--white: #fff;
+	--orange: tomato;
+	--green: #3dbc1d;
+	--grey: grey;
+	--darkgrey: #1b1a1a;
+	--red: #c73640;
+	--lightgrey: #b3b3b3;
+	--blue: #3a80e9;
 }
 
-html{
-  scroll-behavior: smooth;
+[data-theme='dark'] {
+	--white: #ffffff;
+	--black: #111;
+	--grey: #888;
+	--darkgrey: #1b1b1b;
 }
 
-body{
-    background-color: var(--black);
-    color: var(--white);
-    font-family: "Rubik", sans-serif;
+[data-theme='light'] {
+	--white: #111;
+	--black: #fff;
+	--grey: #888;
+	--darkgrey: #f3f3f3;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--black);
+	color: var(--white);
+	font-family: 'Rubik', sans-serif;
 }
 
 ::selection {
-    background-color: var(--green);
-    color: var(--white);
+	background-color: var(--green);
+	color: var(--white);
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
-   
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: var(--black); 
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--green); 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2d8b15; 
-  }
+	width: 7px;
+}
 
-  .list-wrapper{
-    display: block;
-    width: 90%;
-    background-color: var(--darkgrey);
-    margin: 2rem;
-    padding: .1rem 1.5rem;
-    border-radius: 20px;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--black);
+	border-radius: 10px;
+}
 
-  .chart-wrapper{
-    display: block;
-    width: 90%;
-    background-color: var(--darkgrey);
-    margin: 2rem;
-    padding: 2rem 1.5rem !important;
-    border-radius: 20px;
-    cursor: pointer;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--green);
+	border-radius: 10px;
+}
 
-  .select_coin_days{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5rem;
-    margin: 1.5rem;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #2d8b15;
+}
+
+.list-wrapper {
+	display: block;
+	width: 90%;
+	background-color: var(--darkgrey);
+	margin: 2rem;
+	padding: 0.1rem 1.5rem;
+	border-radius: 20px;
+}
+
+.chart-wrapper {
+	display: block;
+	width: 90%;
+	background-color: var(--darkgrey);
+	margin: 2rem;
+	padding: 2rem 1.5rem !important;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.select_coin_days {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5rem;
+	margin: 1.5rem;
+}

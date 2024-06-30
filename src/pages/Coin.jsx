@@ -18,7 +18,10 @@ function Coin() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [coinData, setCoinData] = useState();
 	const [days, setDays] = useState(30);
-	const [chartData, setChartData] = useState({});
+	const [chartData, setChartData] = useState({
+		labels: [],
+		datasets: [],
+	});
 	const [priceType, setPriceType] = useState('prices');
 
 	useEffect(() => {
@@ -82,7 +85,7 @@ function Coin() {
 					<div className='list-wrapper'>
 						<ListComponent coin={coinData} />
 					</div>
-					{/* <div className='chart-wrapper'>
+					<div className='chart-wrapper'>
 						<SelectDays
 							days={days}
 							handleDaysChange={handleDaysChange}
@@ -91,14 +94,8 @@ function Coin() {
 							priceType={priceType}
 							handlePriceTypeChange={handlePriceTypeChange}
 						/>
-						{chartData && (
-							<LineChart
-								chartData={chartData}
-								priceType={priceType}
-								multiAxis={true}
-							/>
-						)}
-					</div> */}
+						{chartData && <LineChart chartData={chartData} />}
+					</div>
 					<CoinInfo
 						description={coinData?.desc}
 						name={coinData?.name}
