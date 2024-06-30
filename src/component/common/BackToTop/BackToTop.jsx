@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import './backToTop.css'
 
 function BackToTop() {
-// Get the button
-let mybutton = document.getElementById("myBtn");
+  let mybutton;
+
+  // Get the button
+  useEffect(() => {
+   mybutton = document.getElementById("myBtn");
+  },[])
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -24,7 +28,7 @@ function topFunction() {
 }
 
   return (
-    <div className='back-to-top' id='myBtn' onClick={() => topFunction()} f>
+    <div className='back-to-top' id='myBtn' onClick={() => topFunction()} >
         <ArrowUpwardRoundedIcon style={{color:'#3DBC1D'}} />
     </div>
   )

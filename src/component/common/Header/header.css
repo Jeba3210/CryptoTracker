@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-between;
     position: sticky;
+    background-color: var(--black);
+    top: 0;
+    left: 0;
     padding: 15px 30px;
 }
 
@@ -20,13 +23,13 @@
 }
 .link{
     
-    color: var(--grey);
+    color: var(--grey) !important;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2rem;
 }
 .link:hover{
-    color: var(--white);
+    color: var(--white) !important;
     transition: all 0.3s;
 }
 

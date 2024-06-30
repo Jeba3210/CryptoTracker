@@ -32,7 +32,7 @@ function MainComponent() {
             animate={{opacity: 1, x:0}}
             transition={{duration: 1, delay: 1}}
             className='btn_div'>
-              <Link to={`dashboard`}><CustomisedButton text={"Dashboard"} /></Link>
+              <Link to={`/dashboard`}><CustomisedButton text={"Dashboard"} /></Link>
               <CustomisedButton text={'Share'} outlined={true}/>
             </motion.div>
         </div>

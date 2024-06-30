@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './coinInfo.css'
 
 function CoinInfo({desc, name}) {
-const short_desc = desc.slice(0,350) + "<span>... <br/><br/> <p style='color : var(--grey)'>Read More...</p></span>";
+const short_desc = desc?.slice(0,350) + "<span>... <br/><br/> <p style='color : var(--grey)'>Read More...</p></span>";
 const long_desc = desc + "<span><br/><br/><p style='color : var(--grey)'>Read less...</p></span>";
 
 const [flag, setflag] = useState(true);

@@ -1,4 +1,4 @@
-export default FormatNumbers=(number)=>{
+export const FormatNumbers=(number)=>{
 
         if (number < 1000) {
           return number;

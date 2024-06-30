@@ -80,7 +80,7 @@
 }
   }
 
-  @media only screen and (max-width: 970px) {
+  @media only screen and (width <=  970px) {
     
     .main_container{
         flex-direction: column;
@@ -115,13 +115,13 @@
     .heading1 , .heading2{
         font-size: 5rem;
     }
-    /* .phone{
-        left: 1px;
+    .phone{
+       right: -85px;
       
      }
      .gradient{
-         left: 20%;
-     } */
+         right: -90px;
+     }
   }
 
   @media only screen and (max-width: 616px) {

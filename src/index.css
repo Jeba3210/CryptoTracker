@@ -10,6 +10,7 @@
     --darkgrey : #1B1A1A;
     --red : #C73640;
     --lightgrey : #b3b3b3;
+    --blue: #3A80E9;
     
 }
 
@@ -67,4 +68,12 @@ body{
     padding: 2rem 1.5rem !important;
     border-radius: 20px;
     cursor: pointer;
+  }
+
+  .select_coin_days{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5rem;
+    margin: 1.5rem;
   }

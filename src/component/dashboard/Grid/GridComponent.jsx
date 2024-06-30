@@ -34,7 +34,7 @@ function GridComponent({ coin }) {
                 <div className='curr_price'>${coin.current_price.toLocaleString() }</div>:
                 <div className='curr_price red_curr'>${coin.current_price.toLocaleString() }</div>
                 }
-                <div>Total Volume : ${coin.total_volume.toLocaleString() }</div>
+                <div>Total Volume : {coin.total_volume.toLocaleString() }</div>
                 <div className='market_cap'>Market Cap : ${coin.market_cap.toLocaleString() }</div>
             </div>
         </div>
