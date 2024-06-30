@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../component/common/Header/Header';
 import Loader from '../component/common/Loader/Loader';
-import { CoinObject } from '../functions/CoinObject';
+import { coinObject } from '../functions/coinObject';
 import ListComponent from '../component/dashboard/List/ListComponent';
 import CoinInfo from '../component/Coin/CoinInfo/CoinInfo';
 import { getCoinData } from '../functions/getCoinData';
@@ -11,7 +11,7 @@ import { getCoinPrices } from '../functions/getCoinPrices';
 import LineChart from '../component/Coin/LineChart/LineChart';
 import SelectDays from '../component/Coin/SelectDays/SelectDays';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
-import { SettingChartData } from '../functions/SettingChartData';
+import { settingChartData } from '../functions/settingChartData';
 
 function Coin() {
 	const { id } = useParams();
@@ -30,15 +30,16 @@ function Coin() {
 
 	async function getData() {
 		setIsLoading(true);
-        const coin_data = await getCoinData(id);
-        console.log(coin_data)
+		const coin_data = await getCoinData(id);
+		console.log(coin_data);
 		if (coin_data) {
-			CoinObject(setCoinData, coin_data);
+			console.log(coin_data);
+			coinObject(setCoinData, coin_data);
 			const coin_prices = await getCoinPrices(id, days, priceType);
 			if (coin_prices) {
-                console.log('Prices Consoled');
-                console.log(coinData);
-				SettingChartData(setChartData, coin_prices);
+				console.log('Prices Consoled');
+				console.log(coinData);
+				settingChartData(setChartData, coin_prices);
 
 				setIsLoading(false);
 			}
@@ -55,7 +56,7 @@ function Coin() {
 		);
 		if (coin_prices) {
 			console.log('Prices Consoled');
-			SettingChartData(setChartData, coin_prices);
+			settingChartData(setChartData, coin_prices);
 			setIsLoading(false);
 		}
 	};
@@ -66,7 +67,7 @@ function Coin() {
 		const coin_prices = await getCoinPrices(id, days, newPriceType);
 		if (coin_prices) {
 			console.log('Prices Consoled');
-			SettingChartData(setChartData, coin_prices);
+			settingChartData(setChartData, coin_prices);
 			setIsLoading(false);
 		}
 	};
@@ -81,7 +82,7 @@ function Coin() {
 					<div className='list-wrapper'>
 						<ListComponent coin={coinData} />
 					</div>
-					<div className='chart-wrapper'>
+					{/* <div className='chart-wrapper'>
 						<SelectDays
 							days={days}
 							handleDaysChange={handleDaysChange}
@@ -90,12 +91,14 @@ function Coin() {
 							priceType={priceType}
 							handlePriceTypeChange={handlePriceTypeChange}
 						/>
-						{chartData && <LineChart
-							chartData={chartData}
-							priceType={priceType}
-							multiAxis={true}
-						/>}
-					</div>
+						{chartData && (
+							<LineChart
+								chartData={chartData}
+								priceType={priceType}
+								multiAxis={true}
+							/>
+						)}
+					</div> */}
 					<CoinInfo
 						description={coinData?.desc}
 						name={coinData?.name}
@@ -107,5 +110,3 @@ function Coin() {
 }
 
 export default Coin;
-
-

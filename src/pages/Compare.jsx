@@ -4,12 +4,12 @@ import SelectCoin from '../component/Compare/SelectCoin/SelectCoin';
 import SelectDays from '../component/Coin/SelectDays/SelectDays';
 import { getCoinData } from '../functions/getCoinData';
 import { getCoinPrices } from '../functions/getCoinPrices';
-import { CoinObject } from '../functions/CoinObject';
+import { coinObject } from '../functions/coinObject';
 import Loader from '../component/common/Loader/Loader';
 import ListComponent from '../component/dashboard/List/ListComponent';
 import CoinInfo from '../component/Coin/CoinInfo/CoinInfo';
 import LineChart from '../component/Coin/LineChart/LineChart';
-import { SettingChartData } from '../functions/SettingChartData';
+import { settingChartData } from '../functions/settingChartData';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
 
 function Compare() {
@@ -34,11 +34,11 @@ function Compare() {
 		if (coin_data1) {
 			const coin_data2 = await getCoinData(secondCrypto);
 			console.log(coin_data1);
-			CoinObject(setFirstCryptoData, coin_data1);
+			coinObject(setFirstCryptoData, coin_data1);
 			console.log(firstCryptoData);
 
 			if (coin_data2) {
-				CoinObject(setSecondCryptoData, coin_data2);
+				coinObject(setSecondCryptoData, coin_data2);
 
 				const coin_prices1 = await getCoinPrices(
 					firstCrypto,
@@ -50,7 +50,7 @@ function Compare() {
 					days,
 					priceType
 				);
-				SettingChartData(setChartData, coin_prices1, coin_prices2);
+				settingChartData(setChartData, coin_prices1, coin_prices2);
 				console.log('BOTH COINS CONSOLED');
 				console.log(firstCryptoData);
 				console.log(secondCryptoData);
@@ -60,14 +60,12 @@ function Compare() {
 		}
 	}
 
-
-
 	async function handleCoinChange(e, isSecondCoin) {
 		setIsLoading(true);
 		if (isSecondCoin) {
 			setSecondCrypto(e.target.value);
 			const coin_data = await getCoinData(e.target.value);
-			CoinObject(setSecondCryptoData, coin_data);
+			coinObject(setSecondCryptoData, coin_data);
 			const coin_prices1 = await getCoinPrices(
 				firstCrypto,
 				days,
@@ -78,19 +76,19 @@ function Compare() {
 				days,
 				priceType
 			);
-			// SettingChartData(setChartData, coin_prices1, coin_prices2);
+			// settingChartData(setChartData, coin_prices1, coin_prices2);
 			console.log('BOTH Prices CONSOLED');
 			setIsLoading(false);
 		} else {
 			setFirstCrypto(e.target.value);
 			const coin_data = await getCoinData(e.target.value);
-			CoinObject(setFirstCryptoData, coin_data);
-			// SettingChartData(setChartData, coin_prices1, coin_prices2);
+			coinObject(setFirstCryptoData, coin_data);
+			// settingChartData(setChartData, coin_prices1, coin_prices2);
 			// setIsLoading(false);
 		}
-    };
+	}
 
-    	async function handleDaysChange(e) {
+	async function handleDaysChange(e) {
 		setIsLoading(true);
 		setDays(e.target.value);
 		const coin_prices1 = await getCoinPrices(
@@ -103,26 +101,25 @@ function Compare() {
 			e.target.value,
 			priceType
 		);
-		SettingChartData(setChartData, coin_prices1, coin_prices2);
+		settingChartData(setChartData, coin_prices1, coin_prices2);
 		setIsLoading(false);
 	}
-    
-    const handlePriceTypeChange = async (event, newPriceType) => {
+
+	const handlePriceTypeChange = async (event, newPriceType) => {
 		setPriceType(newPriceType);
 		console.log(newPriceType);
-	const coin_prices1 = await getCoinPrices(
-					firstCrypto,
-					days,
-					newPriceType
-				);
-				const coin_prices2 = await getCoinPrices(
-					secondCrypto,
-					days,
-					newPriceType
-				);
-				SettingChartData(setChartData, coin_prices1, coin_prices2);
-			setIsLoading(false);
-		
+		const coin_prices1 = await getCoinPrices(
+			firstCrypto,
+			days,
+			newPriceType
+		);
+		const coin_prices2 = await getCoinPrices(
+			secondCrypto,
+			days,
+			newPriceType
+		);
+		settingChartData(setChartData, coin_prices1, coin_prices2);
+		setIsLoading(false);
 	};
 
 	return (
@@ -169,12 +166,12 @@ function Compare() {
 							</div>
 
 							<CoinInfo
-								desc={firstCryptoData.desc}
-								name={firstCryptoData.name}
+								desc={firstCryptoData?.desc}
+								name={firstCryptoData?.name}
 							/>
 							<CoinInfo
-								desc={secondCryptoData.desc}
-								name={secondCryptoData.name}
+								desc={secondCryptoData?.desc}
+								name={secondCryptoData?.name}
 							/>
 						</>
 					)}

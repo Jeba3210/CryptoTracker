@@ -1,7 +1,7 @@
 import React from 'react'
 import {Line} from 'react-chartjs-2'
 import { Chart as ChartJS} from "chart.js/auto";
-import {FormatNumbers} from '../../../functions/FormatNumbers';
+import {formatNumbers} from '../../../functions/formatNumbers';
 
 function LineChart({multiAxis, priceType , chartData}) {
     const options = {
@@ -25,7 +25,7 @@ function LineChart({multiAxis, priceType , chartData}) {
 					callback: function (value, index, ticks) {
 						if (priceType == 'prices') return value.toLocaleString();
 						else {
-							return '$' + FormatNumbers(value);
+							return '$' + formatNumbers(value);
 						}
 					},
 				},
@@ -38,7 +38,7 @@ function LineChart({multiAxis, priceType , chartData}) {
 					callback: function (value, index, ticks) {
 						if (priceType == 'prices') return value.toLocaleString();
 						else {
-							return '$' + FormatNumbers(value);
+							return '$' + formatNumbers(value);
 						}
 					},
 
