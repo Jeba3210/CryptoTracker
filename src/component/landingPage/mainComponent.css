@@ -1,138 +1,140 @@
-.heading1 , .heading2{
-    font-size: 6.94rem;
+.heading1,
+.heading2 {
+	font-size: 6.94rem;
 }
 
-.main_container{
-    display: flex;
-    /* justify-content: ; */
-    padding: 3rem;
+.main_container {
+	display: flex;
+	/* justify-content: ; */
+	padding: 3rem;
 }
 
-
-.heading1{
-    color: var(--white);
+.heading1 {
+	color: var(--white);
 }
-.heading1:hover{
-    color: var(--black);
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: white;
-    transition: all 0.3s;
+.heading1:hover {
+	color: var(--black);
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: var(--white);
+	transition: all 0.3s;
 }
-.heading2{
-    color: var(--green);
-}
-
-.para{
-    font-size: 1.2rem;
-    margin-top: 30px;
-    color: var(--grey);
+.heading2 {
+	color: var(--green);
 }
 
-.btn_div{
-    display: flex;
-    gap: 3rem;
-    margin: 2.5rem;
-}
-.gradient{
-    background: rgb(118,219,93);
-    background: linear-gradient(180deg, rgba(118,219,93,1) 4%, rgba(80,211,47,1) 4%, rgba(112,223,83,1) 5%, rgba(56,169,27,1) 95%, rgba(61,172,33,1) 96%);
-    min-height: 570px;
-    min-width: 280px;
-    position: absolute;
-    border-radius: 25px;
-    right: 0;
-    top: 5rem;
-   
+.para {
+	font-size: 1.2rem;
+	margin-top: 30px;
+	color: var(--grey);
 }
 
-.phone_container{
-    width: 50%;
-    position: relative;
- 
+.btn_div {
+	display: flex;
+	gap: 3rem;
+	margin: 2.5rem;
+}
+.gradient {
+	background: rgb(118, 219, 93);
+	background: linear-gradient(
+		180deg,
+		rgba(118, 219, 93, 1) 4%,
+		rgba(80, 211, 47, 1) 4%,
+		rgba(112, 223, 83, 1) 5%,
+		rgba(56, 169, 27, 1) 95%,
+		rgba(61, 172, 33, 1) 96%
+	);
+	min-height: 570px;
+	min-width: 280px;
+	position: absolute;
+	border-radius: 25px;
+	right: 0;
+	top: 5rem;
 }
 
-.phone{
-    position: absolute;
-    min-width: 350px; 
-    z-index: 100;
-    right: 0;
+.phone_container {
+	width: 50%;
+	position: relative;
 }
 
+.phone {
+	position: absolute;
+	min-width: 350px;
+	z-index: 100;
+	right: 0;
+}
 
 @media only screen and (max-width: 1200px) {
-    .heading1 , .heading2{
-        font-size: 6.4rem;
-    }
-    .gradient{
-        min-height: 550px;
-    }
-  }
-
-  @media only screen and (max-width: 1050px) {
-   
-.phone{
-    min-width: 300px; 
- 
+	.heading1,
+	.heading2 {
+		font-size: 6.4rem;
+	}
+	.gradient {
+		min-height: 550px;
+	}
 }
-.gradient{
-    min-width: 250px;
-    min-height: 500px;
-}
-  }
 
-  @media only screen and (width <=  970px) {
-    
-    .main_container{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 3rem;
-    }
-    .heading1 , .heading2{
-        font-size: 6rem;
-    }
-    .btn_div{
-        align-items: center;
-    }
-    /* .phone_container{
+@media only screen and (max-width: 1050px) {
+	.phone {
+		min-width: 300px;
+	}
+	.gradient {
+		min-width: 250px;
+		min-height: 500px;
+	}
+}
+
+@media only screen and (width <= 970px) {
+	.main_container {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 3rem;
+	}
+	.heading1,
+	.heading2 {
+		font-size: 6rem;
+	}
+	.btn_div {
+		align-items: center;
+	}
+	/* .phone_container{
         top: 2rem;
     } */
-  }
+}
 
-  @media only screen and (max-width: 760px) {
-    .para{
-        font-size: 1.1rem;
-    }
-    .heading1 , .heading2{
-        font-size: 6rem;
-        text-align: center;
-    }
-   
-    
-  }
+@media only screen and (max-width: 760px) {
+	.para {
+		font-size: 1.1rem;
+	}
+	.heading1,
+	.heading2 {
+		font-size: 6rem;
+		text-align: center;
+	}
+}
 
-  @media only screen and (max-width: 730px) {
-    .heading1 , .heading2{
-        font-size: 5rem;
-    }
-    .phone{
-       right: -85px;
-      
-     }
-     .gradient{
-         right: -90px;
-     }
-  }
+@media only screen and (max-width: 730px) {
+	.heading1,
+	.heading2 {
+		font-size: 5rem;
+	}
+	.phone {
+		right: -85px;
+	}
+	.gradient {
+		right: -90px;
+	}
+}
 
-  @media only screen and (max-width: 616px) {
-    .heading1 , .heading2{
-        font-size: 4.5rem;
-    }
-  }
+@media only screen and (max-width: 616px) {
+	.heading1,
+	.heading2 {
+		font-size: 4.5rem;
+	}
+}
 
-  @media only screen and (max-width: 600px) {
-    .main_container{
-        margin-left: 3rem;
-    }
-  }
-
+@media only screen and (max-width: 600px) {
+	.main_container {
+		margin-left: 3rem;
+	}
+}

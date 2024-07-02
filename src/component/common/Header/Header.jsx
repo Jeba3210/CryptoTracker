@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import CustomisedSwitch from './CustomisedSwitch';
 import AnchorTemporaryDrawer from './Drawer';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
@@ -69,7 +68,6 @@ function Header() {
 				CryptoShield <span style={{ color: 'var(--green)' }}>.</span>
 			</motion.h2>
 			<div className='links'>
-				{/* <Switch checked={darkMode} onClick={() => changeMode()} /> */}
 				<GreenSwitch
 					{...label}
 					checked={darkMode}

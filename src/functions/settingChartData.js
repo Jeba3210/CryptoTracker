@@ -1,6 +1,6 @@
 import { convertDate } from './convertDate';
 
-export const settingChartData = (setChartData, coin_prices1, coin_prices2) => {
+export const SettingChartData = (setChartData, coin_prices1, coin_prices2) => {
 	if (coin_prices2) {
 		setChartData({
 			labels: coin_prices1?.map((price) => convertDate(price[0])),

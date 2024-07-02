@@ -4,20 +4,21 @@ import { useParams } from 'react-router-dom';
 import Header from '../component/common/Header/Header';
 import Loader from '../component/common/Loader/Loader';
 import { coinObject } from '../functions/coinObject';
-import ListComponent from '../component/dashboard/List/ListComponent';
 import CoinInfo from '../component/Coin/CoinInfo/CoinInfo';
 import { getCoinData } from '../functions/getCoinData';
 import { getCoinPrices } from '../functions/getCoinPrices';
 import LineChart from '../component/Coin/LineChart/LineChart';
 import SelectDays from '../component/Coin/SelectDays/SelectDays';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
-import { settingChartData } from '../functions/settingChartData';
+import { SettingChartData } from '../functions/SettingChartData';
+import ListComponent from '../component/dashboard/List/ListComponent';
 
 function Coin() {
 	const { id } = useParams();
 	const [isLoading, setIsLoading] = useState(false);
-	const [coinData, setCoinData] = useState();
+	const [coinData, setCoinData] = useState({});
 	const [days, setDays] = useState(30);
+	const [error, setError] = useState(false);
 	const [chartData, setChartData] = useState({
 		labels: [],
 		datasets: [],
@@ -35,14 +36,14 @@ function Coin() {
 		setIsLoading(true);
 		const coin_data = await getCoinData(id);
 		console.log(coin_data);
+		coinObject(setCoinData, coin_data);
 		if (coin_data) {
 			console.log(coin_data);
-			coinObject(setCoinData, coin_data);
 			const coin_prices = await getCoinPrices(id, days, priceType);
 			if (coin_prices) {
 				console.log('Prices Consoled');
 				console.log(coinData);
-				settingChartData(setChartData, coin_prices);
+				SettingChartData(setChartData, coin_prices);
 
 				setIsLoading(false);
 			}
@@ -59,7 +60,7 @@ function Coin() {
 		);
 		if (coin_prices) {
 			console.log('Prices Consoled');
-			settingChartData(setChartData, coin_prices);
+			SettingChartData(setChartData, coin_prices);
 			setIsLoading(false);
 		}
 	};
@@ -70,7 +71,7 @@ function Coin() {
 		const coin_prices = await getCoinPrices(id, days, newPriceType);
 		if (coin_prices) {
 			console.log('Prices Consoled');
-			settingChartData(setChartData, coin_prices);
+			SettingChartData(setChartData, coin_prices);
 			setIsLoading(false);
 		}
 	};
@@ -78,9 +79,8 @@ function Coin() {
 	return (
 		<>
 			<Header />
-			{isLoading ? (
-				<Loader />
-			) : (
+
+			{!error && !isLoading && coinData.id ? (
 				<>
 					<div className='list-wrapper'>
 						<ListComponent coin={coinData} />
@@ -96,11 +96,27 @@ function Coin() {
 						/>
 						{chartData && <LineChart chartData={chartData} />}
 					</div>
-					<CoinInfo
-						description={coinData?.desc}
-						name={coinData?.name}
-					/>
+					<CoinInfo desc={coinData?.desc} name={coinData?.name} />
 				</>
+			) : error ? (
+				<div>
+					<h1 style={{ textAlign: 'center' }}>
+						Sorry, Couldn't find the coin you're looking for 😞
+					</h1>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							margin: '2rem',
+						}}
+					>
+						<a href='/dashboard'>
+							<CustomisedButton text='Dashboard' />
+						</a>
+					</div>
+				</div>
+			) : (
+				<Loader />
 			)}
 		</>
 	);

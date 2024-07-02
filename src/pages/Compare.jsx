@@ -9,7 +9,7 @@ import Loader from '../component/common/Loader/Loader';
 import ListComponent from '../component/dashboard/List/ListComponent';
 import CoinInfo from '../component/Coin/CoinInfo/CoinInfo';
 import LineChart from '../component/Coin/LineChart/LineChart';
-import { settingChartData } from '../functions/settingChartData';
+import { SettingChartData } from '../functions/SettingChartData';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
 
 function Compare() {
@@ -53,7 +53,7 @@ function Compare() {
 					days,
 					priceType
 				);
-				settingChartData(setChartData, coin_prices1, coin_prices2);
+				SettingChartData(setChartData, coin_prices1, coin_prices2);
 				console.log('BOTH COINS CONSOLED');
 				console.log(firstCryptoData);
 				console.log(secondCryptoData);
@@ -79,15 +79,12 @@ function Compare() {
 				days,
 				priceType
 			);
-			// settingChartData(setChartData, coin_prices1, coin_prices2);
 			console.log('BOTH Prices CONSOLED');
 			setIsLoading(false);
 		} else {
 			setFirstCrypto(e.target.value);
 			const coin_data = await getCoinData(e.target.value);
 			coinObject(setFirstCryptoData, coin_data);
-			// settingChartData(setChartData, coin_prices1, coin_prices2);
-			// setIsLoading(false);
 		}
 	}
 
@@ -104,7 +101,7 @@ function Compare() {
 			e.target.value,
 			priceType
 		);
-		settingChartData(setChartData, coin_prices1, coin_prices2);
+		SettingChartData(setChartData, coin_prices1, coin_prices2);
 		setIsLoading(false);
 	}
 
@@ -121,7 +118,7 @@ function Compare() {
 			days,
 			newPriceType
 		);
-		settingChartData(setChartData, coin_prices1, coin_prices2);
+		SettingChartData(setChartData, coin_prices1, coin_prices2);
 		setIsLoading(false);
 	};
 

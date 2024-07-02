@@ -40,23 +40,33 @@ export default function TabsComponent({ coins }) {
 
 				<TabPanel value='grid'>
 					<div className='flex-grid'>
-						{coins.map((coin, i) => {
-							return <GridComponent coin={coin} key={i} />;
-						})}
+						{coins ? (
+							coins.map((coin, i) => (
+								<GridComponent coin={coin} key={i} />
+							))
+						) : (
+							<div>
+								<h3>No Crypto Currencies Found</h3>
+							</div>
+						)}
 					</div>
 				</TabPanel>
 				<TabPanel value='list'>
 					<table className='List-table'>
 						<tbody>
-							{coins.map((coin, i) => {
-								return (
+							{coins ? (
+								coins.map((coin, i) => (
 									<tr key={i}>
 										<td>
 											<ListComponent coin={coin} />
 										</td>
 									</tr>
-								);
-							})}
+								))
+							) : (
+								<div>
+									<h3>No Crypto Currencies Found</h3>
+								</div>
+							)}
 						</tbody>
 					</table>
 				</TabPanel>

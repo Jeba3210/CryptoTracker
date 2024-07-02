@@ -1,5 +1,5 @@
 export const coinObject = (setState, data) => {
-    if (data) {
+	if (data) {
 		setState({
 			id: data.id,
 			image: data.image.large,
@@ -13,5 +13,4 @@ export const coinObject = (setState, data) => {
 			desc: data.description.en,
 		});
 	}
-}
-   
+};
