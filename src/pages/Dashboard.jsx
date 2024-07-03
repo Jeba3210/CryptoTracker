@@ -6,6 +6,7 @@ import PaginationComponent from '../component/dashboard/Pagination/PaginationCom
 import Loader from '../component/common/Loader/Loader';
 import BackToTop from '../component/common/BackToTop/BackToTop';
 import { get100CoinData } from '../functions/get100CoinData';
+import Footer from '../component/common/Footer/Footer';
 
 function Dashboard() {
 	const [coins, setCoins] = useState([]);
@@ -67,6 +68,7 @@ function Dashboard() {
 							handlePageChange={handlePageChange}
 						/>
 					)}
+					<Footer />
 				</>
 			)}
 		</>

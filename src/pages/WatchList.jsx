@@ -1,16 +1,16 @@
 import React from 'react';
-import MainComponent from '../component/landingPage/MainComponent';
 import Header from '../component/common/Header/Header';
 import Footer from '../component/common/Footer/Footer';
+import WatchListComponent from '../component/WatchList/WatchListComponent';
 
-function Home() {
+function WatchList() {
 	return (
 		<>
 			<Header />
-			<MainComponent />
+			<WatchListComponent />
 			<Footer />
 		</>
 	);
 }
 
-export default Home;
+export default WatchList;

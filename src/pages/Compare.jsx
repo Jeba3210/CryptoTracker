@@ -8,9 +8,10 @@ import { coinObject } from '../functions/coinObject';
 import Loader from '../component/common/Loader/Loader';
 import ListComponent from '../component/dashboard/List/ListComponent';
 import CoinInfo from '../component/Coin/CoinInfo/CoinInfo';
-import LineChart from '../component/Coin/LineChart/LineChart';
-import { SettingChartData } from '../functions/SettingChartData';
+import { setCoinPageChartData } from '../functions/setCoinPageChartData';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
+import Footer from '../component/common/Footer/Footer';
+import MultiAxisLineChart from '../component/Compare/MultiAxisLineChart/MultiAxisLineChart';
 
 function Compare() {
 	const [days, setDays] = useState(30);
@@ -53,7 +54,7 @@ function Compare() {
 					days,
 					priceType
 				);
-				SettingChartData(setChartData, coin_prices1, coin_prices2);
+				setCoinPageChartData(setChartData, coin_prices1, coin_prices2);
 				console.log('BOTH COINS CONSOLED');
 				console.log(firstCryptoData);
 				console.log(secondCryptoData);
@@ -101,7 +102,7 @@ function Compare() {
 			e.target.value,
 			priceType
 		);
-		SettingChartData(setChartData, coin_prices1, coin_prices2);
+		setCoinPageChartData(setChartData, coin_prices1, coin_prices2);
 		setIsLoading(false);
 	}
 
@@ -118,7 +119,8 @@ function Compare() {
 			days,
 			newPriceType
 		);
-		SettingChartData(setChartData, coin_prices1, coin_prices2);
+		setCoinPageChartData(setChartData, coin_prices1, coin_prices2);
+		console.log('COINCHARTDATACALLED');
 		setIsLoading(false);
 	};
 
@@ -158,7 +160,7 @@ function Compare() {
 										handlePriceTypeChange
 									}
 								/>
-								<LineChart
+								<MultiAxisLineChart
 									chartData={chartData}
 									multiAxis={true}
 								/>
@@ -174,6 +176,7 @@ function Compare() {
 							/>
 						</>
 					)}
+					<Footer />
 				</>
 			)}
 		</>

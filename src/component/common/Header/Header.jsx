@@ -80,6 +80,9 @@ function Header() {
 				<NavLink to={`/compare`} className='link'>
 					Compare
 				</NavLink>
+				<NavLink to={`/watchlist`} className='link'>
+					Watchlist
+				</NavLink>
 				<NavLink to={`/dashboard`}>
 					<CustomisedButton text={'Dashboard'} />
 				</NavLink>

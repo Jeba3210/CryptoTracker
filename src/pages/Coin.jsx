@@ -12,6 +12,7 @@ import SelectDays from '../component/Coin/SelectDays/SelectDays';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
 import { SettingChartData } from '../functions/SettingChartData';
 import ListComponent from '../component/dashboard/List/ListComponent';
+import Footer from '../component/common/Footer/Footer';
 
 function Coin() {
 	const { id } = useParams();
@@ -97,6 +98,7 @@ function Coin() {
 						{chartData && <LineChart chartData={chartData} />}
 					</div>
 					<CoinInfo desc={coinData?.desc} name={coinData?.name} />
+					<Footer />
 				</>
 			) : error ? (
 				<div>
@@ -114,6 +116,7 @@ function Coin() {
 							<CustomisedButton text='Dashboard' />
 						</a>
 					</div>
+					<Footer />
 				</div>
 			) : (
 				<Loader />
