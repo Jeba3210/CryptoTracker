@@ -10,7 +10,7 @@ import { getCoinPrices } from '../functions/getCoinPrices';
 import LineChart from '../component/Coin/LineChart/LineChart';
 import SelectDays from '../component/Coin/SelectDays/SelectDays';
 import TogglePriceType from '../component/Coin/PriceType/TogglePriceType';
-import { SettingChartData } from '../functions/SettingChartData';
+import { SettingChartData } from '../functions/SettingChartData.js';
 import ListComponent from '../component/dashboard/List/ListComponent';
 import Footer from '../component/common/Footer/Footer';
 
