@@ -6,15 +6,17 @@
 	margin: 1rem 3rem;
 	margin-top: 15rem !important;
 	height: auto;
+	left: 0;
+	bottom: 0;
+	width: 90%;
 	border-radius: 0.75rem;
-	background-color: var(--green);
 	bottom: -500px;
-	/* background: linear-gradient(
+	background: linear-gradient(
 		90deg,
 		rgba(2, 0, 36, 1) 0%,
 		rgb(31, 198, 51) 0%,
 		rgb(99, 247, 94) 100%
-	); */
+	);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }

@@ -8,6 +8,8 @@ import { ThemeProvider } from '@emotion/react';
 import GridComponent from '../Grid/GridComponent';
 import './tabsComponent.css';
 import ListComponent from '../List/ListComponent';
+import CustomisedButton from '../../Button/CustomisedButton';
+import Dashboard from '../../../pages/Dashboard';
 
 export default function TabsComponent({ coins }) {
 	const [value, setValue] = useState('grid');
@@ -41,12 +43,14 @@ export default function TabsComponent({ coins }) {
 				<TabPanel value='grid'>
 					<div className='flex-grid'>
 						{coins ? (
-							coins.map((coin, i) => (
+							coins?.map((coin, i) => (
 								<GridComponent coin={coin} key={i} />
 							))
 						) : (
 							<div>
-								<h3>No Crypto Currencies Found</h3>
+								<h3 style={{ textAlign: 'center' }}>
+									No Crypto Currencies Found
+								</h3>
 							</div>
 						)}
 					</div>
@@ -55,7 +59,7 @@ export default function TabsComponent({ coins }) {
 					<table className='List-table'>
 						<tbody>
 							{coins ? (
-								coins.map((coin, i) => (
+								coins?.map((coin, i) => (
 									<tr key={i}>
 										<td>
 											<ListComponent coin={coin} />
@@ -63,9 +67,17 @@ export default function TabsComponent({ coins }) {
 									</tr>
 								))
 							) : (
-								<div>
-									<h3>No Crypto Currencies Found</h3>
-								</div>
+								<tr>
+									<td
+										style={{
+											textAlign: 'center',
+											fontWeight: '600',
+											fontSize: '1.2rem',
+										}}
+									>
+										No Crypto Currencies Found
+									</td>
+								</tr>
 							)}
 						</tbody>
 					</table>

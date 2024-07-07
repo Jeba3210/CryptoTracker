@@ -148,12 +148,12 @@ a:active {
 	transition: all 0.3s;
 }
 
-.red_watch {
+.watch_red {
 	border: 2px solid var(--red) !important;
 	color: var(--red);
 }
 
-.red_watch:hover {
+.watch_red:hover {
 	background-color: var(--red) !important;
 	color: white;
 	transition: all 0.3s;

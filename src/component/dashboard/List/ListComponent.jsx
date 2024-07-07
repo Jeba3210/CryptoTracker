@@ -1,12 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import './listComponent.css';
 import { Tooltip } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
+import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
+import { removeItemFromWatchlist } from '../../../functions/removeItemFromWatchlist';
+import { addItemToWatchlist } from '../../../functions/addItemToWatchlist';
 
 function ListComponent({ coin }) {
+	const watchList = JSON.parse(localStorage.getItem('watchlist'));
+	const [isCoinAdded, setIsCoinAdded] = useState(
+		watchList?.includes(coin.id)
+	);
+
 	const navigate = useNavigate();
 
 	return (
@@ -78,8 +86,21 @@ function ListComponent({ coin }) {
 				</div>
 			</Tooltip>
 
-			<div className='watch_div'>
-				<StarIcon className='star_fill' />
+			<div
+				className={`watch_div ${
+					coin.price_change_percentage_24h < 0 && 'watch_red'
+				}`}
+				onClick={(e) => {
+					e.preventDefault();
+					if (isCoinAdded) {
+						removeItemFromWatchlist(e, coin.id, setIsCoinAdded);
+					} else {
+						setIsCoinAdded(true);
+						addItemToWatchlist(e, coin.id);
+					}
+				}}
+			>
+				<StarOutlineOutlinedIcon />
 			</div>
 		</div>
 	);
