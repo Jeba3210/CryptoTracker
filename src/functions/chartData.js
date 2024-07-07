@@ -48,7 +48,7 @@
 
 import { convertDate } from './convertDate';
 
-export const SettingChartData = (setChartData, coin_prices1) => {
+export const chartData = (setChartData, coin_prices1) => {
 	setChartData({
 		labels: coin_prices1?.map((price) => convertDate(price[0])),
 		datasets: [
