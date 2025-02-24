@@ -29,7 +29,7 @@ function MainComponent() {
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1, delay: 0.75 }}
-					lassName='para'
+					className='para'
 				>
 					Track crypto through a public api in real time. Visit the
 					dashboard to do so!
